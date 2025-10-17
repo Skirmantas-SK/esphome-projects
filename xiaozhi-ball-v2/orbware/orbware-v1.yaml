@@ -729,8 +729,11 @@ micro_wake_word:
   id: mww
   models:
     - okay_nabu
-    - hey_jarvis
-    - alexa
+    # Additional wake word models can be uncommented if needed
+    # When multiple models are enabled, they appear as separate options in Home Assistant
+    # To reduce entities in HA, use only one wake word model
+    # - hey_jarvis
+    # - alexa
   on_wake_word_detected:
     - if:
         condition:
