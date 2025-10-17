@@ -31,10 +31,10 @@ This project is based on and inspired by the excellent work in [RealDeco/xiaozhi
 ## Screenshots
 
 <p align="center">
-  <img src="images/main-page.png" alt="Main Page - Light Control" width="200"/>
-  <img src="images/media-page.png" alt="Media Page - Now Playing" width="200"/>
-  <img src="images/media-sound-page.png" alt="Media Page - Volume Control" width="200"/>
-  <img src="images/weather-page.png" alt="Weather Page" width="200"/>
+  <img src="images/main-page.png" alt="Main Page - Light Control" width="200" height="200"/>
+  <img src="images/media-page.png" alt="Media Page - Now Playing" width="200" height="200"/>
+  <img src="images/media-sound-page.png" alt="Media Page - Volume Control" width="200" height="200"/>
+  <img src="images/weather-page.png" alt="Weather Page" width="200" height="200"/>
 </p>
 
 *From left to right: Main (Light Control), Media (Now Playing), Media (Volume), Weather Forecast*
