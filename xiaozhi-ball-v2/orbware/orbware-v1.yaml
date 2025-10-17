@@ -235,6 +235,12 @@ sensor:
             if (current != id(last_battery_percent)) {
               id(last_battery_percent) = current;
             }
+        - lvgl.label.update:
+            id: battery_label
+            text: !lambda |-
+              char buf[10];
+              snprintf(buf, sizeof(buf), "%.0f%%", x);
+              return std::string(buf);
 
   # Home Assistant light brightness sensor (0-255)
   - platform: homeassistant
