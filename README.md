@@ -31,10 +31,12 @@ A comprehensive ESPHome configuration transforming the Xiaozhi Ball V2 into a po
 - Interactive circular display with multiple screens
 - Light control interface
 - Media player control with now playing display
-- Weather forecast display
+- Weather forecast display with today's and tomorrow's conditions
 - Touch and swipe navigation
 
-[View OrbWare Documentation →](./xiaozhi-ball-v2/orbware/)
+**Documentation:**
+- [OrbWare Installation & Usage Guide →](./xiaozhi-ball-v2/orbware/)
+- [Home Assistant Configuration Guide →](./xiaozhi-ball-v2/orbware/HA_CONFIGURATION.md)
 
 ## Getting Started
 
@@ -53,6 +55,7 @@ Each project has its own detailed installation guide. Navigate to the project di
 2. Configure entity IDs and settings in the YAML file
 3. Set up your WiFi credentials in `secrets.yaml`
 4. Flash the firmware using ESPHome
+5. Configure required Home Assistant sensors (see project's HA_CONFIGURATION.md if available)
 
 ## Repository Structure
 
@@ -60,7 +63,13 @@ Each project has its own detailed installation guide. Navigate to the project di
 esphome-projects/
 ├── xiaozhi-ball-v2/          # Xiaozhi Ball V2 projects
 │   ├── orbware/              # OrbWare V1 configuration
+│   │   ├── orbware-v1.yaml   # Main ESPHome configuration
+│   │   ├── HA_CONFIGURATION.md   # Home Assistant setup guide
+│   │   ├── README.md         # Project documentation
+│   │   └── images/           # UI screenshots
 │   └── resources/            # Shared resources (sounds, icons)
+│       ├── sounds/           # Startup sounds
+│       └── weather-icons/    # Weather condition icons
 └── README.md                 # This file
 ```
 
