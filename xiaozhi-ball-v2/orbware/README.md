@@ -221,6 +221,24 @@ Voice commands are processed through Home Assistant's voice assistant pipeline, 
 - Check Home Assistant is reachable from the device
 - Review ESPHome logs for API connection errors
 
+### Home Assistant Actions Permission Warning
+If you see this warning in Home Assistant:
+> "OrbWare V1 is not permitted to perform Home Assistant actions
+> Warning · Reported by ESPHome
+> The ESPHome device attempted to perform a Home Assistant action, but this functionality is not enabled.
+> 
+> If you trust this device and want to allow it to perform Home Assistant action, you can enable this functionality in the options flow."
+
+To resolve this:
+1. Go to **Settings** → **Devices & Services**
+2. Find and click on the **ESPHome** integration
+3. Locate your OrbWare V1 device in the list
+4. Click the **cogwheel icon** (⚙️) next to the device to open configuration
+5. Enable the option **"Allow the device to perform Home Assistant actions"**
+6. Save the changes
+
+This permission is required for the device to control lights, media players, and other Home Assistant entities.
+
 ## Customization
 
 ### Adding Custom Screens
