@@ -1,6 +1,6 @@
 substitutions:
   name: orbware-v1
-  friendly_name: "OrbWare V1"
+  friendly_name: "OrbWare"
 
 ## OrbWare v1 - Streamlined Voice Assistant with Media & Weather #########################################################################
 ## OrbWare Features:
@@ -9,7 +9,7 @@ substitutions:
 ## - WEATHER FORECASTS: Shows today and tomorrow's weather with temperature highs/lows
 ## - WEATHER FRIENDLY NAME: Display entity's friendly name on weather page
 ## - ALBUM/RADIO PLAY: Quick button to play a favorite album or radio station
-## - THREE SCREENS: Main (2 Light Switches), Media (Music Player), Weather (Forecast Display)
+## - THREE MAIN SCREENS: Main (2 Light Switches), Media (Music Player), Weather (Forecast Display)
 ## - MEDIA VOLUME CONTROL: Dedicated page with volume controls
 ## Clean, streamlined configuration for essential voice assistant functionality ############################################################
 
@@ -235,6 +235,12 @@ sensor:
             if (current != id(last_battery_percent)) {
               id(last_battery_percent) = current;
             }
+        - lvgl.label.update:
+            id: battery_label
+            text: !lambda |-
+              char battery_text[16];
+              snprintf(battery_text, sizeof(battery_text), "%.0f%%", id(battery_percentage).state);
+              return std::string(battery_text);
 
   # Home Assistant light brightness sensor (0-255)
   - platform: homeassistant
@@ -594,35 +600,12 @@ output:
 light:
   - platform: monochromatic
     id: Sled
-    name: Screen
+    name: Screen #Screen Toggle
     icon: "mdi:television"
     entity_category: config
     output: backlight_output
-    restore_mode: ALWAYS_ON
+    restore_mode: RESTORE_DEFAULT_ON
     default_transition_length: 250ms
-  - platform: esp32_rmt_led_strip
-    id: led
-    name: none
-    disabled_by_default: false
-    entity_category: config
-    pin: GPIO${led_pin}
-    default_transition_length: 0s
-    chipset: WS2812
-    num_leds: 1
-    rgb_order: grb
-    effects:
-      - pulse:
-          name: "Slow Pulse"
-          transition_length: 250ms
-          update_interval: 250ms
-          min_brightness: 50%
-          max_brightness: 100%
-      - pulse:
-          name: "Fast Pulse"
-          transition_length: 100ms
-          update_interval: 100ms
-          min_brightness: 50%
-          max_brightness: 100%
 
 i2c:
   - id: bus_a
@@ -860,12 +843,18 @@ script:
                                     lambda: return id(voice_assistant_phase) == ${voice_assist_thinking_phase_id};
                                   then:
                                     - lvgl.page.show: thinking_page
+                                    - lvgl.label.update:
+                                        id: request_label
+                                        text: !lambda return id(text_request).state.c_str();
                                   else:
                                     - if:
                                         condition:
                                           lambda: return id(voice_assistant_phase) == ${voice_assist_replying_phase_id};
                                         then:
                                           - lvgl.page.show: replying_page
+                                          - lvgl.label.update:
+                                              id: response_label
+                                              text: !lambda return id(text_response).state.c_str();
                                         else:
                                           - if:
                                               condition:
@@ -892,6 +881,12 @@ script:
                                                                   - lvgl.page.show: timer_finished_page
                                                                 else:
                                                                   - lvgl.page.show: main_screen
+                                                                  - lvgl.label.update:
+                                                                      id: battery_label
+                                                                      text: !lambda |-
+                                                                        char battery_text[16];
+                                                                        snprintf(battery_text, sizeof(battery_text), "%.0f%%", id(battery_percentage).state);
+                                                                        return battery_text;
                       else:
                         - lvgl.page.show: no_ha_page
                 else:
@@ -1061,7 +1056,7 @@ interval:
 
 switch:
   - platform: template
-    name: Mute
+    name: Mute #Mute Voice Assistant
     id: mute
     icon: "mdi:microphone-off"
     optimistic: true
@@ -1104,16 +1099,23 @@ switch:
       - delay: 15min
       - switch.turn_off: timer_ringing
 
+  - platform: gpio
+    name: Speaker Enable #Speaker Enable
+    icon: "mdi:speaker"
+    entity_category: config
+    pin: GPIO${speaker_enable_pin}
+    restore_mode: RESTORE_DEFAULT_ON
+
   - platform: template
     id: wake_sound
-    name: Wake sound
+    name: Wake sound #Wake sound Toggle
     icon: "mdi:bullhorn"
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
 
   - platform: template
-    id: startup_sound_switch
+    id: startup_sound_switch #Startup sound Toggle
     name: Startup sound
     icon: "mdi:card-text-outline"
     entity_category: config
@@ -1123,7 +1125,7 @@ switch:
 select:
   - platform: template
     entity_category: config
-    name: Wake word engine location
+    name: Wake word engine location #Wake word engine location
     id: wake_word_engine_location
     icon: "mdi:account-voice"
     optimistic: true
