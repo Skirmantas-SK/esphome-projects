@@ -5,8 +5,8 @@ Smart Box V1 displays weather forecasts and media player information on its scre
 ## Quick Setup
 
 1. Add the template sensors below to your Home Assistant `configuration.yaml`
-2. Replace `weather.forecast_home` with your weather entity ID
-3. Replace `media_player.naminis_2` with your media player entity ID
+2. Replace `weather.forecast` with your weather entity ID
+3. Replace `media_player.media_player` with your media player entity ID
 4. Replace `http://192.168.1.102:8123` with your Home Assistant URL
 5. Restart Home Assistant or reload YAML configuration
 6. Verify sensors are working in Developer Tools → States
@@ -26,12 +26,12 @@ template:
       # Now Playing Title
       - name: "Now Playing Title"
         state: >
-          {{ state_attr('media_player.naminis_2', 'media_title') or 'No media' }}
+          {{ state_attr('media_player.media_player', 'media_title') or 'No media' }}
 
       # Now Playing Artist
       - name: "Now Playing Artist"
         state: >
-          {{ state_attr('media_player.naminis_2', 'media_artist') or '' }}
+          {{ state_attr('media_player.media_player', 'media_artist') or '' }}
 
       # Now Playing Album Art
       # This sensor extracts and formats the album art URL for the display
@@ -39,7 +39,7 @@ template:
         state: >
           {% set base_url = 'http://192.168.1.102:8123' %}  {# REPLACE with your HA IP #}
           {% set placeholder = base_url + '/local/images/placeholder.png' %}
-          {% set art = state_attr('media_player.naminis_2', 'entity_picture') %}
+          {% set art = state_attr('media_player.media_player', 'entity_picture') %}
           
           {% if art %}
             {# 1. Handle Relative vs Absolute URLs #}
@@ -75,7 +75,7 @@ template:
         data:
           type: daily
         target:
-          entity_id: weather.forecast_home  # 👈 Replace with your real entity
+          entity_id: weather.forecast  # 👈 Replace with your real entity
         response_variable: daily
 
     sensor:
@@ -87,7 +87,7 @@ template:
       - name: "Weather Forecast Today Temp High"
         unique_id: weather_forecast_today_temp_high
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 0 %}
             {{ daily[entity].forecast[0].temperature }}
           {% else %}
@@ -101,7 +101,7 @@ template:
       - name: "Weather Forecast Today Temp Low"
         unique_id: weather_forecast_today_temp_low
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 0 %}
             {{ daily[entity].forecast[0].templow }}
           {% else %}
@@ -119,7 +119,7 @@ template:
       - name: "Weather Forecast Tomorrow Temp High"
         unique_id: weather_forecast_tomorrow_temp_high
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 1 %}
             {{ daily[entity].forecast[1].temperature }}
           {% else %}
@@ -133,7 +133,7 @@ template:
       - name: "Weather Forecast Tomorrow Temp Low"
         unique_id: weather_forecast_tomorrow_temp_low
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 1 %}
             {{ daily[entity].forecast[1].templow }}
           {% else %}
@@ -147,7 +147,7 @@ template:
       - name: "Weather Forecast Tomorrow Condition"
         unique_id: weather_forecast_tomorrow_condition
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 1 %}
             {{ daily[entity].forecast[1].condition }}
           {% else %}
@@ -162,7 +162,7 @@ template:
       - name: "Weather Forecast After Tomorrow Temp High"
         unique_id: weather_forecast_after_tomorrow_temp_high
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 2 %}
             {{ daily[entity].forecast[2].temperature }}
           {% else %}
@@ -176,7 +176,7 @@ template:
       - name: "Weather Forecast After Tomorrow Temp Low"
         unique_id: weather_forecast_after_tomorrow_temp_low
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 2 %}
             {{ daily[entity].forecast[2].templow }}
           {% else %}
@@ -190,7 +190,7 @@ template:
       - name: "Weather Forecast After Tomorrow Condition"
         unique_id: weather_forecast_after_tomorrow_condition
         state: >
-          {% set entity = 'weather.forecast_home' %}
+          {% set entity = 'weather.forecast' %}
           {% if daily[entity].forecast is defined and daily[entity].forecast|length > 2 %}
             {{ daily[entity].forecast[2].condition }}
           {% else %}
@@ -204,8 +204,8 @@ template:
 
 | Placeholder | Description | Example |
 |-------------|-------------|---------|
-| `weather.forecast_home` | Your Home Assistant weather entity | `weather.home`, `weather.openweathermap` |
-| `media_player.naminis_2` | Your media player entity | `media_player.living_room`, `media_player.sonos` |
+| `weather.forecast` | Your Home Assistant weather entity | `weather.home`, `weather.openweathermap` |
+| `media_player.media_player` | Your media player entity | `media_player.living_room`, `media_player.sonos` |
 | `http://192.168.1.102:8123` | Your Home Assistant URL | `http://homeassistant.local:8123` |
 
 ### Sensor Entity IDs Created
@@ -315,7 +315,7 @@ Make sure your `smart-box-v1.yaml` substitutions match the sensor names:
 ```yaml
 substitutions:
   # Weather sensors
-  weather_entity: "weather.forecast_home"
+  weather_entity: "weather.forecast"
   weather_forecast_today_temp_high: "sensor.weather_forecast_today_temp_high"
   weather_forecast_today_temp_low: "sensor.weather_forecast_today_temp_low"
   weather_forecast_temp_high: "sensor.weather_forecast_tomorrow_temp_high"
@@ -326,7 +326,7 @@ substitutions:
   weather_forecast_after_tomorrow_condition: "sensor.weather_forecast_after_tomorrow_condition"
   
   # Media player
-  default_media_player: "media_player.naminis_2"
+  default_media_player: "media_player.media_player"
   now_playing_album_art: "sensor.now_playing_album_art"
 ```
 
@@ -336,7 +336,7 @@ substitutions:
 
 1. **Verify weather entity exists**:
    - Go to Developer Tools → States
-   - Search for your weather entity (e.g., `weather.forecast_home`)
+   - Search for your weather entity (e.g., `weather.forecast`)
    - Ensure it has forecast data
 
 2. **Check service availability**:
@@ -345,7 +345,7 @@ substitutions:
    - Try calling it manually with your entity
 
 3. **Check entity name in template**:
-   - Ensure the entity name in `{% set entity = 'weather.forecast_home' %}` matches exactly
+   - Ensure the entity name in `{% set entity = 'weather.forecast' %}` matches exactly
    - Entity names are case-sensitive
 
 ### Album Art Not Loading
