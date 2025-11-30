@@ -37,7 +37,7 @@ template:
       # This sensor extracts and formats the album art URL for the display
       - name: "Now Playing Album Art"
         state: >
-          {% set base_url = 'http://192.168.1.102:8123' %}  {# REPLACE with your HA IP #}
+          {% set base_url = 'http://192.168.1.100:8123' %}  {# REPLACE with your HA IP #}
           {% set placeholder = base_url + '/local/images/placeholder.png' %}
           {% set art = state_attr('media_player.media_player', 'entity_picture') %}
           
