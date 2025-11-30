@@ -206,7 +206,7 @@ template:
 |-------------|-------------|---------|
 | `weather.forecast` | Your Home Assistant weather entity | `weather.home`, `weather.openweathermap` |
 | `media_player.media_player` | Your media player entity | `media_player.living_room`, `media_player.sonos` |
-| `http://192.168.1.102:8123` | Your Home Assistant URL | `http://homeassistant.local:8123` |
+| `http://192.168.1.100:8123` | Your Home Assistant URL | `http://homeassistant.local:8123` |
 
 ### Sensor Entity IDs Created
 
