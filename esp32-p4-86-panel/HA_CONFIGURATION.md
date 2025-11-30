@@ -7,7 +7,7 @@ Smart Box V1 displays weather forecasts and media player information on its scre
 1. Add the template sensors below to your Home Assistant `configuration.yaml`
 2. Replace `weather.forecast` with your weather entity ID
 3. Replace `media_player.media_player` with your media player entity ID
-4. Replace `http://192.168.1.102:8123` with your Home Assistant URL
+4. Replace `http://192.168.1.100:8123` with your Home Assistant URL
 5. Restart Home Assistant or reload YAML configuration
 6. Verify sensors are working in Developer Tools → States
 
