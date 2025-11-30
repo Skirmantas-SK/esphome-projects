@@ -9,6 +9,7 @@
 
 - [Overview](#overview)
 - [Key Features](#key-features)
+- [Screenshots](#screenshots)
 - [Hardware Requirements](#hardware-requirements)
 - [Configuration](#configuration)
 - [Installation Prerequisites](#installation-prerequisites)
@@ -69,6 +70,15 @@ Smart Box V1 is a comprehensive ESPHome configuration for the ESP32-P4 Smart 86-
 - **Swipe Up**: Close settings panel
 - **Touch Controls**: Full touch support for all buttons and sliders
 - **Physical Integration**: ESP32-C6 WiFi co-processor for reliable connectivity
+
+## Screenshots
+
+Preview of the Smart Box V1 display screens:
+
+| Weather Dashboard | Music Player | Home Control |
+|:-----------------:|:------------:|:------------:|
+| ![Weather Page](resources/screen-images/weather-page.png) | ![Music Page](resources/screen-images/music-page.png) | ![Home Control Page](resources/screen-images/home-control-page.png) |
+| Current weather with 3-day forecast | Album art and media controls | 4 customizable light/switch buttons |
 
 ## Hardware Requirements
 
