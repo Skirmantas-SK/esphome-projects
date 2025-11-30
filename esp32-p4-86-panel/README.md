@@ -5,8 +5,19 @@
 [![ESPHome](https://img.shields.io/badge/ESPHome-Compatible-blue.svg)](https://esphome.io/)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Integration-green.svg)](https://www.home-assistant.io/)
 
+## Compatible Devices
+
+This configuration works with the following devices:
+
+- **ESP32-P4-86-Panel-ETH-2RO** - Wall-mounted 86-box panel
+- **ESP32-P4-WIFI6-Touch-LCD-4B** - WiFi6 touch LCD panel
+  - [Purchase from Waveshare](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-4b.htm)
+
+Both devices share the same ESP32-P4 core and display specifications, making this firmware compatible with either device.
+
 ## Table of Contents
 
+- [Compatible Devices](#compatible-devices)
 - [Overview](#overview)
 - [Key Features](#key-features)
 - [Screenshots](#screenshots)
@@ -82,7 +93,7 @@ Preview of the Smart Box V1 display screens:
 
 ## Hardware Requirements
 
-Designed for the ESP32-P4 Smart 86-Box with:
+Designed for the ESP32-P4 Smart 86-Box and compatible devices (see [Compatible Devices](#compatible-devices)) with:
 - **ESP32-P4 microcontroller** - 400MHz CPU with 32MB flash
 - **ESP32-C6 WiFi co-processor** - Dedicated WiFi handling
 - **MIPI-DSI Display** (720x720) - High-resolution square display
@@ -168,7 +179,7 @@ Before installing Smart Box V1, ensure you have:
    - Or use standalone ESPHome installation
    - Documentation: https://esphome.io/guides/getting_started_hassio/
 
-3. **ESP32-P4 Smart 86-Box Device** - The hardware this firmware is designed for
+3. **Compatible ESP32-P4 Device** - See [Compatible Devices](#compatible-devices) for supported hardware
 
 4. **USB Cable** - For initial firmware flash (USB-C)
 
