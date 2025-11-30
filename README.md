@@ -22,6 +22,24 @@ ESPHome is a powerful system for creating custom firmware for ESP8266/ESP32 devi
 
 ## Current Projects
 
+### 📦 ESP32-P4 Smart 86-Box - Smart Box V1
+
+A comprehensive ESPHome configuration for the ESP32-P4 Smart 86-Box, transforming it into a powerful voice-controlled smart home control panel with a 720x720 high-resolution display.
+
+**Features:**
+- Multi-wake word voice assistant (okay_nabu, hey_jarvis, alexa)
+- High-resolution 720x720 MIPI-DSI touch display
+- Weather dashboard with 3-day forecast
+- Media player control with album art display
+- Home control page with 4 customizable buttons
+- Radio station and playlist presets
+- Settings panel with brightness and volume control
+- Swipe navigation between screens
+
+**Documentation:**
+- [Smart Box V1 Installation & Usage Guide →](./esp32-p4-86-panel/)
+- [Home Assistant Configuration Guide →](./esp32-p4-86-panel/HA_CONFIGURATION.md)
+
 ### 🔮 Xiaozhi Ball V2 - OrbWare
 
 A comprehensive ESPHome configuration transforming the Xiaozhi Ball V2 into a powerful voice-controlled smart home display.
@@ -61,6 +79,13 @@ Each project has its own detailed installation guide. Navigate to the project di
 
 ```
 esphome-projects/
+├── esp32-p4-86-panel/        # ESP32-P4 Smart 86-Box projects
+│   ├── smart-box-v1.yaml     # Main ESPHome configuration
+│   ├── HA_CONFIGURATION.md   # Home Assistant setup guide
+│   ├── README.md             # Project documentation
+│   └── resources/            # Shared resources
+│       ├── playlist-radio-icons/  # Radio station logos
+│       └── weather-icons/    # Weather condition icons
 ├── xiaozhi-ball-v2/          # Xiaozhi Ball V2 projects
 │   ├── orbware/              # OrbWare V1 configuration
 │   │   ├── orbware-v1.yaml   # Main ESPHome configuration
@@ -75,14 +100,25 @@ esphome-projects/
 
 ## Current Focus
 
-I am currently working with the **Xiaozhi Ball V2**, a smart display device that combines:
+I am currently working with two smart display devices:
+
+### ESP32-P4 Smart 86-Box
+A wall-mounted control panel with:
+- High-resolution 720x720 MIPI-DSI display
+- Voice assistant with on-device wake word detection
+- Weather dashboard with multi-day forecasts
+- Media player controls with album art
+- Home automation control buttons
+
+### Xiaozhi Ball V2
+A compact smart display that combines:
 - Voice assistant capabilities
 - Touch-enabled circular display
 - Home automation control
 - Media playback interface
 - Real-time information display
 
-This device exemplifies how ESPHome can transform hardware into a versatile smart home control hub that works seamlessly with AI assistants while maintaining full local control.
+These devices exemplify how ESPHome can transform hardware into versatile smart home control hubs that work seamlessly with AI assistants while maintaining full local control.
 
 ## Future Projects
 
