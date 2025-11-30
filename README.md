@@ -24,7 +24,11 @@ ESPHome is a powerful system for creating custom firmware for ESP8266/ESP32 devi
 
 ### 📦 ESP32-P4 Smart 86-Box - Smart Box V1
 
-A comprehensive ESPHome configuration for the ESP32-P4 Smart 86-Box, transforming it into a powerful voice-controlled smart home control panel with a 720x720 high-resolution display.
+A comprehensive ESPHome configuration for the ESP32-P4 Smart 86-Box and compatible devices, transforming them into powerful voice-controlled smart home control panels with a 720x720 high-resolution display.
+
+**Compatible Devices:**
+- ESP32-P4-86-Panel-ETH-2RO
+- ESP32-P4-WIFI6-Touch-LCD-4B ([Purchase from Waveshare](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-4b.htm))
 
 **Features:**
 - Multi-wake word voice assistant (okay_nabu, hey_jarvis, alexa)
@@ -102,8 +106,9 @@ esphome-projects/
 
 I am currently working with two smart display devices:
 
-### ESP32-P4 Smart 86-Box
-A wall-mounted control panel with:
+### ESP32-P4 Smart 86-Box / ESP32-P4-WIFI6-Touch-LCD-4B
+A wall-mounted control panel compatible with multiple ESP32-P4 based devices:
+- **Supported devices**: ESP32-P4-86-Panel-ETH-2RO, ESP32-P4-WIFI6-Touch-LCD-4B
 - High-resolution 720x720 MIPI-DSI display
 - Voice assistant with on-device wake word detection
 - Weather dashboard with multi-day forecasts
