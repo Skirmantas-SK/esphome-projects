@@ -50,7 +50,7 @@ template:
             {% endif %}
 
             {# 2. Regex to request 700x700 specifically #}
-            {# Note: If the provider doesn't support 250, this might fail. #}
+            {# Note: If the provider doesn't support 700, this might fail. #}
             {# Safer alternative: Request 1000x1000 and let ESPHome resize down. #}
             {% set url = url | regex_replace('(\d+)x(\d+)bb\.jpg', '700x700bb.jpg') %}
             {% set url = url | regex_replace('(\d+)x(\d+)\.jpg', '700x700.jpg') %}
