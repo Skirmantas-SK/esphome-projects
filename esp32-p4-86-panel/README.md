@@ -107,7 +107,7 @@ substitutions:
   friendly_name: "Smart Box V1"
 
   # Weather Configuration
-  weather_entity: "weather.forecast_home"  # Your weather entity
+  weather_entity: "weather.forecast"  # Your weather entity
 
   # Media Player Configuration
   default_media_player: "media_player.your_media_player"
