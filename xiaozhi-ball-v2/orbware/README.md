@@ -85,6 +85,7 @@ substitutions:
   default_media_player: "media_player.YOUR_MEDIA_PLAYER"
   album_radio_content_type: "music"
   album_radio_content_id: "YOUR_CONTENT_ID_HERE"
+  assets_base_url: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources"
 ```
 
 ### WiFi Configuration
@@ -277,4 +278,3 @@ For questions, issues, or feature requests:
 - Review Home Assistant voice assistant docs: https://www.home-assistant.io/voice_control/
 
 ---
-

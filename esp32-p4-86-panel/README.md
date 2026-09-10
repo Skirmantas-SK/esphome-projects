@@ -150,6 +150,9 @@ substitutions:
   playlist_3_content_id: "library://playlist/3"
   playlist_3_name: "Playlist 3"
 
+  # Asset source (update this when moving to a split repository)
+  assets_base_url: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources"
+
   # Physical Buttons - Map to your HA entities
   button_1_entity: "light.living_room"
   button_2_entity: "light.bedroom"
