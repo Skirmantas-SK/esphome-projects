@@ -55,6 +55,10 @@ substitutions:
 
 ## SETTINGS ##################################################################################################################################
 
+  # Asset source (split-ready)
+  # If this project moves to a dedicated repository, only update this URL.
+  assets_base_url: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources"
+
   startup_sound: "Home_Connected" # (options are: available,Home_Connected,Computer_Ready)
 
   imagewidth: "240" # GC9A01A (Ball v2 & Muma & Puck) "240"
@@ -93,7 +97,7 @@ substitutions:
 
 ##############################################################################################################################################
 
-  startup_sound_file: https://github.com/Skirmantas-SK/esphome-projects/raw/main/xiaozhi-ball-v2/resources/sounds/startup-sound-1.flac
+  startup_sound_file: ${assets_base_url}/sounds/startup-sound-1.flac
 
   voice_assist_idle_phase_id: "1"
   voice_assist_listening_phase_id: "2"
@@ -1478,82 +1482,82 @@ font:
 
 # Weather icon images
 image:
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/sunny.png"
+  - file: "${assets_base_url}/weather-icons/40x40/sunny.png"
     id: weather_sunny
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/clear-night.png"
+  - file: "${assets_base_url}/weather-icons/40x40/clear-night.png"
     id: weather_clear_night
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/cloudy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/cloudy.png"
     id: weather_cloudy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/fog.png"
+  - file: "${assets_base_url}/weather-icons/40x40/fog.png"
     id: weather_fog
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/hail.png"
+  - file: "${assets_base_url}/weather-icons/40x40/hail.png"
     id: weather_hail
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/lightning.png"
+  - file: "${assets_base_url}/weather-icons/40x40/lightning.png"
     id: weather_lightning
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/lightning-rainy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/lightning-rainy.png"
     id: weather_lightning_rainy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/partlycloudyday.png"
+  - file: "${assets_base_url}/weather-icons/40x40/partlycloudyday.png"
     id: weather_partlycloudy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/partlycloudynight.png"
+  - file: "${assets_base_url}/weather-icons/40x40/partlycloudynight.png"
     id: weather_partlycloudynight
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/pouring.png"
+  - file: "${assets_base_url}/weather-icons/40x40/pouring.png"
     id: weather_pouring
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/rainy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/rainy.png"
     id: weather_rainy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/snowy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/snowy.png"
     id: weather_snowy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/snowy-rainy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/snowy-rainy.png"
     id: weather_snowy_rainy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/windy.png"
+  - file: "${assets_base_url}/weather-icons/40x40/windy.png"
     id: weather_windy
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/windy-variant.png"
+  - file: "${assets_base_url}/weather-icons/40x40/windy-variant.png"
     id: weather_windy_variant
     resize: 40x40
     type: RGB565
     transparency: alpha_channel
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/xiaozhi-ball-v2/resources/weather-icons/40x40/exceptional.png"
+  - file: "${assets_base_url}/weather-icons/40x40/exceptional.png"
     id: weather_exceptional
     resize: 40x40
     type: RGB565

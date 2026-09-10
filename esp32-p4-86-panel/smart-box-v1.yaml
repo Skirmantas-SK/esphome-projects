@@ -112,6 +112,10 @@ substitutions:
   playlist_3_content_id: "library://playlist/3"
   playlist_3_name: "Playlist 3"
 
+  # Asset source (split-ready)
+  # If this project moves to a dedicated repository, only update this URL.
+  assets_base_url: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources"
+
   # -------------------------------------------------------------------------
   # PHYSICAL BUTTON MAPPING
   # -------------------------------------------------------------------------
@@ -1532,112 +1536,112 @@ font:
 
 # Weather icon images (96x96)
 image:
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/sunny.png"
+  - file: "${assets_base_url}/weather-icons/96x96/sunny.png"
     id: weather_sunny
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/clear-night.png"
+  - file: "${assets_base_url}/weather-icons/96x96/clear-night.png"
     id: weather_clear_night
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/cloudy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/cloudy.png"
     id: weather_cloudy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/fog.png"
+  - file: "${assets_base_url}/weather-icons/96x96/fog.png"
     id: weather_fog
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/hail.png"
+  - file: "${assets_base_url}/weather-icons/96x96/hail.png"
     id: weather_hail
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/lightning.png"
+  - file: "${assets_base_url}/weather-icons/96x96/lightning.png"
     id: weather_lightning
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/lightning-rainy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/lightning-rainy.png"
     id: weather_lightning_rainy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/partlycloudyday.png"
+  - file: "${assets_base_url}/weather-icons/96x96/partlycloudyday.png"
     id: weather_partlycloudyday
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/partlycloudynight.png"
+  - file: "${assets_base_url}/weather-icons/96x96/partlycloudynight.png"
     id: weather_partlycloudynight
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/pouring.png"
+  - file: "${assets_base_url}/weather-icons/96x96/pouring.png"
     id: weather_pouring
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/rainy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/rainy.png"
     id: weather_rainy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/snowy-rainy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/snowy-rainy.png"
     id: weather_snowy_rainy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/snowy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/snowy.png"
     id: weather_snowy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/windy.png"
+  - file: "${assets_base_url}/weather-icons/96x96/windy.png"
     id: weather_windy
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/windy-variant.png"
+  - file: "${assets_base_url}/weather-icons/96x96/windy-variant.png"
     id: weather_windy_variant
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/weather-icons/96x96/exceptional.png"
+  - file: "${assets_base_url}/weather-icons/96x96/exceptional.png"
     id: weather_exceptional
     resize: 96x96
     type: RGB565
@@ -1653,21 +1657,21 @@ image:
     byte_order: little_endian
 
   # Radio station logos (96x96) - For Buttons
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/power-hit-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/power-hit-radio.png"
     id: radio_power_hit
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/european-hit-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/european-hit-radio.png"
     id: radio_european_hit
     resize: 96x96
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/m1-plius-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/m1-plius-radio.png"
     id: radio_m1
     resize: 96x96
     type: RGB565
@@ -1675,21 +1679,21 @@ image:
     byte_order: little_endian
 
   # Radio station logos (250x250) - For Music Player Screen
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/power-hit-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/power-hit-radio.png"
     id: radio_power_hit_large
     resize: 250x250
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/european-hit-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/european-hit-radio.png"
     id: radio_european_hit_large
     resize: 250x250
     type: RGB565
     transparency: alpha_channel
     byte_order: little_endian
 
-  - file: "https://raw.githubusercontent.com/Skirmantas-SK/esphome-projects/main/esp32-p4-86-panel/resources/playlist-radio-icons/m1-plius-radio.png"
+  - file: "${assets_base_url}/playlist-radio-icons/m1-plius-radio.png"
     id: radio_m1_large
     resize: 250x250
     type: RGB565

@@ -60,6 +60,20 @@ A comprehensive ESPHome configuration transforming the Xiaozhi Ball V2 into a po
 - [OrbWare Installation & Usage Guide →](./xiaozhi-ball-v2/orbware/)
 - [Home Assistant Configuration Guide →](./xiaozhi-ball-v2/orbware/HA_CONFIGURATION.md)
 
+## Split Preparation
+
+This repository is prepared for splitting into two dedicated repositories:
+
+- `esphome-smart-box-v1` (content from `esp32-p4-86-panel/`)
+- `esphome-orbware-v1` (content from `xiaozhi-ball-v2/`)
+
+### Post-split checklist
+
+1. Move each device folder to its new repository root.
+2. Keep each `resources/` folder in the same relative location used by its YAML.
+3. Update only the `assets_base_url` substitution in each YAML file to the new repository URL.
+4. Keep `README.md` and `HA_CONFIGURATION.md` together with their corresponding YAML configs.
+
 ## Getting Started
 
 ### Prerequisites
